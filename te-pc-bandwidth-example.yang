@@ -1,0 +1,34 @@
+  /*
+   * Augment TE bandwidth
+   */
+
+  augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+        + "tepc:path-request/tepc:te-bandwidth/tepc:technology" {
+    description
+      "Augment TE bandwidth of the requested path.";
+    case example {
+      uses example-path-bandwidth;
+    }
+  }
+
+  augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+        + "tepc:tunnel-attributes/tepc:te-bandwidth/"
+        + "tepc:technology" {
+    description
+      "Augment TE bandwidth of the requested tunnel attributes.";
+    case example {
+      uses example-path-bandwidth;
+    }
+  }
+
+  augment "/te:tunnels-path-compute/te:output/"
+        + "te:path-compute-result/tepc:response/"
+        + "tepc:computed-paths-properties/"
+        + "tepc:computed-path-properties/tepc:path-properties/"
+        + "tepc:te-bandwidth/tepc:technology" {
+    description
+      "Augment TE bandwidth of the computed path properties.";
+    case example {
+      uses example-path-bandwidth;
+    }
+  }

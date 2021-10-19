@@ -1,0 +1,118 @@
+  /*
+   * Augment TE bandwidth
+   */
+
+  augment "/te:te/te:globals/te:named-path-constraints/"
+        + "te:named-path-constraint/"
+        + "te:te-bandwidth/te:technology" {
+    description
+      "Augment TE bandwidth of the named path constraint.";
+    case example {
+      uses example-path-bandwidth;
+    }
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:te-bandwidth/te:technology" {
+    description
+      "Augment TE bandwidth of the tunnel.";
+    case example {
+      uses example-path-bandwidth;
+    }
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:primary-paths/te:primary-path/"
+        + "te:te-bandwidth/te:technology" {
+    description
+      "Augment TE bandwidth of the primary path.";
+    case example {
+      uses example-path-bandwidth;
+    }
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:primary-paths/te:primary-path/"
+        + "te:computed-paths-properties/"
+		+ "te:computed-path-properties/te:path-properties/"
+        + "te:te-bandwidth/te:technology" {
+    description
+      "Augment TE bandwidth of primary path's computed path
+      properties.";
+    case example {
+      uses example-path-bandwidth;
+    }
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:primary-paths/te:primary-path/"
+        + "te:primary-reverse-path/"
+        + "te:te-bandwidth/te:technology" {
+    description
+      "Augment TE bandwidth of the primary reverse path.";
+    case example {
+      uses example-path-bandwidth;
+    }
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:primary-paths/te:primary-path/"
+		+ "te:primary-reverse-path/"
+        + "te:computed-paths-properties/"
+		+ "te:computed-path-properties/te:path-properties/"
+        + "te:te-bandwidth/te:technology" {
+    description
+      "Augment TE bandwidth of the primary reverse path's computed
+      path properties.";
+    case example {
+      uses example-path-bandwidth;
+    }
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:secondary-paths/te:secondary-path/"
+        + "te:te-bandwidth/te:technology" {
+    description
+      "Augment TE bandwidth of the secondary path.";
+    case example {
+      uses example-path-bandwidth;
+    }
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:secondary-paths/te:secondary-path/"
+        + "te:computed-paths-properties/"
+		+ "te:computed-path-properties/te:path-properties/"
+        + "te:te-bandwidth/te:technology" {
+    description
+      "Augment TE bandwidth of the secondary path's computed path
+      properties.";
+    case example {
+      uses example-path-bandwidth;
+    }
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:secondary-reverse-paths/"
+		+ "te:secondary-reverse-path/"
+        + "te:te-bandwidth/te:technology" {
+    description
+      "Augment TE bandwidth of the secondary reverse path.";
+    case example {
+      uses example-path-bandwidth;
+    }
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:secondary-reverse-paths/"
+		+ "te:secondary-reverse-path/"
+        + "te:computed-paths-properties/"
+		+ "te:computed-path-properties/te:path-properties/"
+        + "te:te-bandwidth/te:technology" {
+    description
+      "Augment TE bandwidth of the secondary reverse path's computed
+      path properties.";
+    case example {
+      uses example-path-bandwidth;
+    }
+  }

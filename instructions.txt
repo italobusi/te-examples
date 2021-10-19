@@ -1,0 +1,138 @@
+Replace
+	case example
+with:
+	case wson
+	case flexi-grid
+	case otn
+	case eth
+	case packet
+
+// Topology
+
+Replace
+	example topology type.";
+with:
+	WSON topology type.";
+    Flexi-grid topology type.";
+	OTN topology type.";
+
+	Packet TE topology type.";
+
+Replace:
+	+ "ex-topo:example-topology" {
+with:
+	+ "wson:wson-topology" {
+	+ "flexi-grid:flexi-grid-topology" {
+	+ "otntopo:otn-topology" {
+	+ "ethtetopo:eth-tran-topology" {
+	+ "tet-pkt:packet" {
+
+// Label Range
+
+Replace:
+	uses example-label-range-info;
+with:
+	uses l0-types:l0-label-range-info;
+	uses l0-types:flexi-grid-label-range-info;
+	uses l1-types:otn-label-range-info;
+	uses etht-types:eth-label-restriction;
+
+// Label
+
+Replace:
+	uses example-label-hop;
+with:
+	uses l0-types:wson-label-hop;
+	uses l0-types:flexi-grid-label-hop;
+	uses l1-types:otn-label-hop;
+	uses etht-types:eth-label;
+
+Replace:
+	uses example-label-start-end;
+with:
+	uses l0-types:wson-label-start-end;
+	uses l0-types:flexi-grid-label-start-end;
+	uses l1-types:otn-label-start-end;
+	uses etht-types:eth-label;
+
+Replace:
+	uses example-label-step;
+with:
+	uses l0-types:wson-label-step;
+	uses l0-types:flexi-grid-label-step;
+	uses l1-types:otn-label-step;
+	uses etht-types:eth-label-step;
+
+// Bandwidth
+
+Replace:
+	uses example-path-bandwidth;
+with:
+	uses layer0-types:wson-path-bandwidth;
+	uses layer0-types:flex-grid-path-bandwidth;
+	uses l1-types:otn-path-bandwidth;
+	uses etht-types:eth-bandwidth;
+    uses mte-types:te-packet-path-bandwidth;
+
+Replace:
+	uses example-link-bandwidth;
+with:
+	uses layer0-types:wson-link-bandwidth;
+	uses layer0-types:flex-grid-path-bandwidth;
+	uses l1-types:otn-link-bandwidth;
+	uses etht-types:eth-bandwidth;
+    uses mte-types:te-packet-link-bandwidth;
+
+
+---
+
+
+Replace
+	EXAMPLE bandwidth
+with:
+	WSON bandwidth
+	Flexi-grid bandwidth
+	OTN bandwidth
+	Ethernet bandwidth
+
+Replace:
+	uses example-path-bandwidth;
+with:
+	uses layer0-types:wson-path-bandwidth;
+	uses layer0-types:flex-grid-path-bandwidth;
+	uses otn-types:otn-path-bandwidth;
+	uses etht-types:eth-bandwidth;
+    uses mte-types:te-packet-path-bandwidth;
+
+Replace:
+	uses example-link-bandwidth;
+with:
+	uses layer0-types:wson-link-bandwidth;
+	uses layer0-types:flex-grid-path-bandwidth;
+	l1-types:otn-link-bandwidth;
+	uses etht-types:eth-bandwidth;
+    uses mte-types:te-packet-link-bandwidth;
+
+Replace:
+	description "EXAMPLE TE bandwidth";
+with:
+	description "WSON TE bandwidth";
+	description "Flex-grid TE bandwidth";
+	description "OTN TE bandwidth";
+	description "Ethernet TE bandwidth";
+
+
+Replace
+	EXAMPLE label
+with:
+	WSON label
+	Flex-grid label
+	OTN label
+	Ethernet label
+
+Replace:
+	description "EXAMPLE TE label";
+with:
+	description "WSON TE label";
+	description "OTN TE label";
+	description "Ethernet TE label";

@@ -1,0 +1,21 @@
+  /*
+   * Augment TE label range information
+   */
+
+  augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+        + "tepc:path-request/tepc:path-in-segment/"
+        + "tepc:label-restrictions/tepc:label-restriction" {
+    description
+      "Augment TE label range information for the ingress segment
+      of the requested path.";
+    uses example-label-range-info;
+  }
+
+  augment "/te:tunnels-path-compute/te:input/te:path-compute-info/"
+        + "tepc:path-request/tepc:path-out-segment/"
+        + "tepc:label-restrictions/tepc:label-restriction" {
+    description
+      "Augment TE label range information for the egress segment
+      of the requested path.";
+    uses example-label-range-info;
+  }

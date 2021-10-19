@@ -1,0 +1,168 @@
+  /*
+   * Augment TE label range information
+   */
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:label-restrictions/tet:label-restriction" {
+    when "../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range information for the TE node
+       connectivity matrices.";
+    uses example-label-range-info;
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/tet:from/"
+        + "tet:label-restrictions/tet:label-restriction" {
+    when "../../../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range information for the source LTP
+       of the connectivity matrix entry.";
+    uses example-label-range-info;
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/tet:to/"
+        + "tet:label-restrictions/tet:label-restriction" {
+    when "../../../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range information for the destination LTP
+       of the connectivity matrix entry.";
+    uses example-label-range-info;
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/"
+        + "tet:connectivity-matrices/tet:label-restrictions/"
+        + "tet:label-restriction" {
+    when "../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range information for the TE node
+       connectivity matrices information source.";
+    uses example-label-range-info;
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:from/tet:label-restrictions/tet:label-restriction" {
+    when "../../../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range information for the source LTP
+       of the connectivity matrix entry information source.";
+    uses example-label-range-info;
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:to/tet:label-restrictions/tet:label-restriction" {
+    when "../../../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range information for the destination LTP
+       of the connectivity matrix entry information source.";
+    uses example-label-range-info;
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:label-restrictions/tet:label-restriction" {
+    when "../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range information for the TTP
+       Local Link Connectivities.";
+    uses example-label-range-info;
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:local-link-connectivity/"
+        + "tet:label-restrictions/tet:label-restriction" {
+    when "../../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range information for the TTP
+       Local Link Connectivity entry.";
+    uses example-label-range-info;
+  }
+
+  augment "/nw:networks/nw:network/nt:link/tet:te/"
+        + "tet:te-link-attributes/"
+        + "tet:label-restrictions/tet:label-restriction" {
+    when "../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range information for the TE link.";
+    uses example-label-range-info;
+  }
+
+  augment "/nw:networks/nw:network/nt:link/tet:te/"
+        + "tet:information-source-entry/"
+        + "tet:label-restrictions/tet:label-restriction" {
+    when "../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range information for the TE link
+       information source.";
+    uses example-label-range-info;
+  }
+
+  augment "/nw:networks/tet:te/tet:templates/"
+        + "tet:link-template/tet:te-link-attributes/"
+        + "tet:label-restrictions/tet:label-restriction" {
+    description
+      "Augment TE label range information for the TE link template.";
+    uses example-label-range-info;
+  }

@@ -1,0 +1,104 @@
+  /*
+   * Augment TE label range information
+   */
+
+  augment "/te:te/te:globals/te:named-path-constraints/"
+        + "te:named-path-constraint/te:path-in-segment/"
+        + "te:label-restrictions/te:label-restriction" {
+    description
+      "Augment TE label range information for the ingress segment
+      of the named path constraint.";
+    uses example-label-range-info;
+  }
+
+  augment "/te:te/te:globals/te:named-path-constraints/"
+        + "te:named-path-constraint/te:path-out-segment/"
+        + "te:label-restrictions/"
+        + "te:label-restriction" {
+    description
+      "Augment TE label range information for the egress segment
+      of the named path constraint.";
+    uses example-label-range-info;
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:primary-paths/te:primary-path/"
+        + "te:path-in-segment/te:label-restrictions/"
+        + "te:label-restriction" {
+    description
+      "Augment TE label range information for the ingress segment
+      of the primay path.";
+    uses example-label-range-info;
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:primary-paths/te:primary-path/"
+        + "te:path-out-segment/te:label-restrictions/"
+        + "te:label-restriction" {
+    description
+      "Augment TE label range information for the egress segment
+      of the primay path.";
+    uses example-label-range-info;
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:primary-paths/te:primary-path/"
+        + "te:primary-reverse-path/"
+        + "te:path-in-segment/te:label-restrictions/"
+        + "te:label-restriction" {
+    description
+      "Augment TE label range information for the ingress segment
+      of the primay reverse path.";
+    uses example-label-range-info;
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:primary-paths/te:primary-path/"
+        + "te:primary-reverse-path/"
+        + "te:path-out-segment/te:label-restrictions/"
+        + "te:label-restriction" {
+    description
+      "Augment TE label range information for the egress segment
+      of the primay reverse path.";
+    uses example-label-range-info;
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:secondary-paths/te:secondary-path/"
+        + "te:path-in-segment/te:label-restrictions/"
+        + "te:label-restriction" {
+    description
+      "Augment TE label range information for the ingress segment
+      of the secondary path.";
+    uses example-label-range-info;
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:secondary-paths/te:secondary-path/"
+        + "te:path-out-segment/te:label-restrictions/"
+        + "te:label-restriction" {
+    description
+      "Augment TE label range information for the egress segment
+      of the secondary path.";
+    uses example-label-range-info;
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:secondary-reverse-paths/te:secondary-reverse-path/"
+        + "te:path-in-segment/te:label-restrictions/"
+        + "te:label-restriction" {
+    description
+      "Augment TE label range information for the ingress segment
+      of the secondary reverse path.";
+    uses example-label-range-info;
+  }
+
+  augment "/te:te/te:tunnels/te:tunnel/"
+        + "te:secondary-reverse-paths/te:secondary-reverse-path/"
+        + "te:path-out-segment/te:label-restrictions/"
+        + "te:label-restriction" {
+    description
+      "Augment TE label range information for the egress segment
+      of the secondary reverse path.";
+    uses example-label-range-info;
+  }

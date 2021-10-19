@@ -1,0 +1,1346 @@
+  /*
+   * Augment TE label
+   */
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-start/"
+        + "tet:te-label/tet:technology" {
+    when "../../../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range start for the TE node
+       connectivity matrices";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:label-restrictions/"
+        + "tet:label-restriction/tet:label-end/"
+        + "tet:te-label/tet:technology" {
+    when "../../../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range end for the TE node
+       connectivity matrices";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:label-restrictions/"
+        + "tet:label-restriction/tet:label-step/"
+        + "tet:technology" {
+    when "../../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range step for the TE node
+       connectivity matrices";
+    case example {
+      uses example-label-step;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:underlay/tet:primary-path/tet:path-element/"
+        + "tet:type/tet:label/tet:label-hop/"
+        + "tet:te-label/tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the underlay primary path of the
+       TE node connectivity matrices";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:underlay/tet:backup-path/tet:path-element/"
+        + "tet:type/tet:label/tet:label-hop/"
+        + "tet:te-label/tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the underlay backup path of the
+       TE node connectivity matrices";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:optimizations/tet:algorithm/tet:metric/"
+        + "tet:optimization-metric/"
+        + "tet:explicit-route-exclude-objects/"
+        + "tet:route-object-exclude-object/"
+        + "tet:type/tet:label/tet:label-hop/"
+        + "tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the explicit route objects excluded
+       by the path computation of the TE node connectivity
+       matrices";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:optimizations/tet:algorithm/tet:metric/"
+        + "tet:optimization-metric/"
+        + "tet:explicit-route-include-objects/"
+        + "tet:route-object-include-object/"
+        + "tet:type/tet:label/tet:label-hop/"
+        + "tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the explicit route objects included
+       by the path computation of the TE node connectivity
+       matrices";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:path-properties/tet:path-route-objects/"
+        + "tet:path-route-object/tet:type/tet:label/tet:label-hop/"
+        + "tet:te-label/tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the computed path route objects
+       of the TE node connectivity matrices";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/tet:from/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-start/"
+        + "tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range start for the source LTP
+       of the connectivity matrix entry.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/tet:from/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-end/"
+        + "tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range end for the source LTP
+       of the connectivity matrix entry.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/tet:from/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-step/"
+        + "tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range step for the source LTP
+       of the connectivity matrix entry.";
+    case example {
+      uses example-label-step;
+    }
+  }
+  
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/tet:to/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-start/"
+        + "tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range start for the destination LTP
+       of the connectivity matrix entry.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/tet:to/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-end/"
+        + "tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range end for the destination LTP
+       of the connectivity matrix entry.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/tet:to/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-step/"
+        + "tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range step for the destination LTP
+       of the connectivity matrix entry.";
+    case example {
+      uses example-label-step;
+    }
+  }
+  
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:underlay/tet:primary-path/tet:path-element/"
+        + "tet:type/tet:label/tet:label-hop/"
+        + "tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the underlay primary path
+       of the connectivity matrix entry.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:underlay/tet:backup-path/tet:path-element/"
+        + "tet:type/tet:label/tet:label-hop/"
+        + "tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the underlay backup path
+       of the connectivity matrix entry.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/tet:optimizations/"
+        + "tet:algorithm/tet:metric/tet:optimization-metric/"
+        + "tet:explicit-route-exclude-objects/"
+        + "tet:route-object-exclude-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the explicit route objects excluded
+       by the path computation of the connectivity matrix entry.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/tet:optimizations/"
+        + "tet:algorithm/tet:metric/tet:optimization-metric/"
+        + "tet:explicit-route-include-objects/"
+        + "tet:route-object-include-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the explicit route objects included
+       by the path computation of the connectivity matrix entry.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:te-node-attributes/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:path-properties/tet:path-route-objects/"
+        + "tet:path-route-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the computed path route objects
+       of the connectivity matrix entry.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/"
+        + "tet:connectivity-matrices/tet:label-restrictions/"
+        + "tet:label-restriction/"
+        + "tet:label-start/tet:te-label/tet:technology" {
+    when "../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range start for the TE node connectivity
+       matrices information source.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/"
+        + "tet:connectivity-matrices/tet:label-restrictions/"
+        + "tet:label-restriction/"
+        + "tet:label-end/tet:te-label/tet:technology" {
+    when "../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range end for the TE node connectivity
+       matrices information source.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/"
+        + "tet:connectivity-matrices/tet:label-restrictions/"
+        + "tet:label-restriction/"
+        + "tet:label-step/tet:technology" {
+    when "../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range step for the TE node connectivity
+       matrices information source.";
+    case example {
+      uses example-label-step;
+    }
+  }
+  
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:underlay/tet:primary-path/tet:path-element/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the underlay primary path
+       of the TE node connectivity matrices of the information
+       source entry.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:underlay/tet:backup-path/tet:path-element/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the underlay backup path
+       of the TE node connectivity matrices of the information
+       source entry.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:optimizations/tet:algorithm/tet:metric/"
+        + "tet:optimization-metric/"
+        + "tet:explicit-route-exclude-objects/"
+        + "tet:route-object-exclude-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the explicit route objects excluded
+       by the path computation of the TE node connectivity matrices
+       information source.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:optimizations/tet:algorithm/tet:metric/"
+        + "tet:optimization-metric/"
+        + "tet:explicit-route-include-objects/"
+        + "tet:route-object-include-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the explicit route objects included
+       by the path computation of the TE node connectivity matrices
+       information source.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:path-properties/tet:path-route-objects/"
+        + "tet:path-route-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the computed path route objects
+       of the TE node connectivity matrices information source.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:from/tet:label-restrictions/"
+        + "tet:label-restriction/"
+        + "tet:label-start/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range start for the source LTP
+       of the connectivity matrix entry information source.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:from/tet:label-restrictions/"
+        + "tet:label-restriction/"
+        + "tet:label-end/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range end for the source LTP
+       of the connectivity matrix entry information source.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:from/tet:label-restrictions/"
+        + "tet:label-restriction/"
+        + "tet:label-step/tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range step for the source LTP
+       of the connectivity matrix entry information source.";
+    case example {
+      uses example-label-step;
+    }
+  }
+  
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:to/tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-start/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range start for the destination LTP
+       of the connectivity matrix entry information source.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:to/tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-end/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range end for the destination LTP
+       of the connectivity matrix entry information source.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:to/tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-step/tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range step for the destination LTP
+       of the connectivity matrix entry information source.";
+    case example {
+      uses example-label-step;
+    }
+  }
+  
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:underlay/tet:primary-path/tet:path-element/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the underlay primary path
+       of the connectivity matrix entry information source.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:underlay/tet:backup-path/tet:path-element/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the underlay backup path
+       of the connectivity matrix entry information source.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:optimizations/tet:algorithm/tet:metric/"
+        + "tet:optimization-metric/"
+        + "tet:explicit-route-exclude-objects/"
+        + "tet:route-object-exclude-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the explicit route objects excluded
+       by the path computation of the connectivity matrix entry
+       information source.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:optimizations/tet:algorithm/tet:metric/"
+        + "tet:optimization-metric/"
+        + "tet:explicit-route-include-objects/"
+        + "tet:route-object-include-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the explicit route objects included
+       by the path computation of the connectivity matrix entry
+       information source.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:information-source-entry/tet:connectivity-matrices/"
+        + "tet:connectivity-matrix/"
+        + "tet:path-properties/tet:path-route-objects/"
+        + "tet:path-route-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the computed path route objects
+       of the connectivity matrix entry information source.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+      + "tet:tunnel-termination-point/"
+      + "tet:local-link-connectivities/"
+      + "tet:label-restrictions/tet:label-restriction/"
+      + "tet:label-start/"
+      + "tet:te-label/tet:technology" {
+    when "../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range start for the TTP
+       Local Link Connectivities.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-end/"
+        + "tet:te-label/tet:technology"{
+    when "../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range end for the TTP
+       Local Link Connectivities.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-step/"
+        + "tet:technology"{
+    when "../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range step for the TTP
+       Local Link Connectivities.";
+    case example {
+      uses example-label-step;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:underlay/tet:primary-path/tet:path-element/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the underlay primary path
+       of the TTP Local Link Connectivities.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:underlay/tet:backup-path/tet:path-element/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the underlay backup path
+       of the TTP Local Link Connectivities.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:optimizations/tet:algorithm/tet:metric/"
+        + "tet:optimization-metric/"
+        + "tet:explicit-route-exclude-objects/"
+        + "tet:route-object-exclude-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the explicit route objects excluded
+       by the path computation of the TTP Local Link
+       Connectivities.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:optimizations/tet:algorithm/tet:metric/"
+        + "tet:optimization-metric/"
+        + "tet:explicit-route-include-objects/"
+        + "tet:route-object-include-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the explicit route objects included
+       by the path computation of the TTP Local Link
+       Connectivities.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:path-properties/tet:path-route-objects/"
+        + "tet:path-route-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the computed path route objects
+       of the TTP Local Link Connectivities.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:local-link-connectivity/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-start/tet:te-label/tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range start for the TTP
+       Local Link Connectivity entry.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:local-link-connectivity/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-end/tet:te-label/tet:technology" {
+    when "../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range end for the TTP
+       Local Link Connectivity entry.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:local-link-connectivity/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-step/tet:technology" {
+    when "../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range step for the TTP
+       Local Link Connectivity entry.";
+    case example {
+      uses example-label-step;
+    }
+  }
+  
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:local-link-connectivity/"
+        + "tet:underlay/tet:primary-path/tet:path-element/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the underlay primary path
+       of the TTP Local Link Connectivity entry.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:local-link-connectivity/"
+        + "tet:underlay/tet:backup-path/tet:path-element/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the underlay backup path
+       of the TTP Local Link Connectivity entry.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:local-link-connectivity/"
+        + "tet:optimizations/tet:algorithm/tet:metric/"
+        + "tet:optimization-metric/"
+        + "tet:explicit-route-exclude-objects/"
+        + "tet:route-object-exclude-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the explicit route objects excluded
+       by the path computation of the TTP Local Link
+       Connectivity entry.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:local-link-connectivity/"
+        + "tet:optimizations/tet:algorithm/tet:metric/"
+        + "tet:optimization-metric/"
+        + "tet:explicit-route-include-objects/"
+        + "tet:route-object-include-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the explicit route objects included
+       by the path computation of the TTP Local Link
+       Connectivity entry.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nw:node/tet:te/"
+        + "tet:tunnel-termination-point/"
+        + "tet:local-link-connectivities/"
+        + "tet:local-link-connectivity/"
+        + "tet:path-properties/tet:path-route-objects/"
+        + "tet:path-route-object/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the computed path route objects
+       of the TTP Local Link Connectivity entry.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+  augment "/nw:networks/nw:network/nt:link/tet:te/"
+        + "tet:te-link-attributes/"
+        + "tet:underlay/tet:primary-path/tet:path-element/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the underlay primary path
+       of the TE link.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nt:link/tet:te/"
+        + "tet:te-link-attributes/"
+        + "tet:underlay/tet:backup-path/tet:path-element/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    when "../../../../../../../../"
+       + "nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label hop for the underlay backup path
+       of the TE link.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nt:link/tet:te/"
+        + "tet:te-link-attributes/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-start/tet:te-label/tet:technology" {
+    when "../../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range start for the TE link.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nt:link/tet:te/"
+        + "tet:te-link-attributes/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-end/tet:te-label/tet:technology" {
+    when "../../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range end for the TE link.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nt:link/tet:te/"
+        + "tet:te-link-attributes/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-step/tet:technology" {
+    when "../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range step for the TE link.";
+    case example {
+      uses example-label-step;
+    }
+  }
+  
+  augment "/nw:networks/nw:network/nt:link/tet:te/"
+        + "tet:information-source-entry/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-start/tet:te-label/tet:technology" {
+    when "../../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range start for the TE link
+       information source.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nt:link/tet:te/"
+        + "tet:information-source-entry/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-end/tet:te-label/tet:technology" {
+    when "../../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range end for the TE link
+       information source.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/nw:network/nt:link/tet:te/"
+        + "tet:information-source-entry/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-step/tet:technology" {
+    when "../../../../../../nw:network-types/tet:te-topology/"
+       + "ex-topo:example-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+         example topology type.";
+    }
+    description
+      "Augment TE label range step for the TE link
+       information source.";
+    case example {
+      uses example-label-step;
+    }
+  }
+  
+  augment "/nw:networks/tet:te/tet:templates/"
+        + "tet:link-template/tet:te-link-attributes/"
+        + "tet:underlay/tet:primary-path/tet:path-element/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    description
+      "Augment TE label hop for the underlay primary path
+       of the TE link template.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/tet:te/tet:templates/"
+        + "tet:link-template/tet:te-link-attributes/"
+        + "tet:underlay/tet:backup-path/tet:path-element/tet:type/"
+        + "tet:label/tet:label-hop/tet:te-label/tet:technology" {
+    description
+      "Augment TE label hop for the underlay backup path
+       of the TE link template.";
+    case example {
+      uses example-label-hop;
+    }
+  }
+
+  augment "/nw:networks/tet:te/tet:templates/"
+        + "tet:link-template/tet:te-link-attributes/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-start/tet:te-label/tet:technology" {
+    description
+      "Augment TE label range start for the TE link template.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/tet:te/tet:templates/"
+        + "tet:link-template/tet:te-link-attributes/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-end/tet:te-label/tet:technology" {
+    description
+      "Augment TE label range end for the TE link template.";
+    case example {
+      uses example-label-start-end;
+    }
+  }
+
+  augment "/nw:networks/tet:te/tet:templates/"
+        + "tet:link-template/tet:te-link-attributes/"
+        + "tet:label-restrictions/tet:label-restriction/"
+        + "tet:label-step/tet:technology" {
+    description
+      "Augment TE label range step for the TE link template.";
+    case example {
+      uses example-label-step;
+    }
+  }
